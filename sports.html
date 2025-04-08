@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>E-Sports Registration</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        /* Background Styling */
+        body {
+            background-image: url('https://wallpapercave.com/wp/wp5231535.jpg');
+            background-size: cover;
+            background-position: center;
+            color: gold;
+            text-align: center;
+            padding: 30px;
+            position: relative;
+        }
+
+        /* Overlay for better readability */
+        body::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: -1;
+        }
+
+        h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 8px rgba(255, 215, 0, 0.8);
+        }
+
+        /* Game Container */
+        .games {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        /* Individual Game Box */
+        .game {
+            background: black;
+            padding: 15px;
+            border-radius: 10px;
+            width: 300px;
+            border: 2px solid gold;
+            box-shadow: 0 0 10px gold;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .game:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 15px gold;
+        }
+
+        /* Game Image */
+        .game img {
+            width: 100%;
+            height: 200px;
+            border-radius: 10px;
+            object-fit: cover;
+        }
+
+        h3 {
+            margin-top: 10px;
+            font-size: 20px;
+        }
+
+        p {
+            margin: 5px 0;
+            font-size: 16px;
+            opacity: 0.8;
+        }
+
+        /* Buttons */
+        button {
+            background: gold;
+            color: black;
+            padding: 12px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+            width: 100%;
+        }
+
+        button:hover {
+            background: black;
+            color: gold;
+            border: 2px solid gold;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .games {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .game {
+                width: 80%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <script>
+        function registerGame(gameName) {
+            window.open(`registration.html?game=${encodeURIComponent(gameName)}`, '_blank');
+        }
+    </script>
+
+    <h2>E-Sports Registration</h2>
+
+    <div class="games">
+        <div class="game">
+            <img src="ff.webp">
+            <h3>Game 1</h3>
+            <p>Free Fire</p>
+            <button onclick="registerGame('Free Fire')">Register for Game 1</button>
+        </div>
+
+        <div class="game">
+            <img src="cod.jpg">
+            <h3>Game 2</h3>
+            <p>Call of Duty</p>
+            <button onclick="registerGame('Call of Duty')">Register for Game 2</button>
+        </div>
+
+        <div class="game">
+            <img src="pubg.jpg">
+            <h3>Game 3</h3>
+            <p>PUBG</p>
+            <button onclick="registerGame('PUBG')">Register for Game 3</button>
+        </div>
+
+        <div class="game">
+            <img src="val.jpeg">
+            <h3>Game 4</h3>
+            <p>Valorant</p>
+            <button onclick="registerGame('Valorant')">Register for Game 4</button>
+        </div>
+
+        <div class="game">
+            <img src="farlight.jpg">
+            <h3>Game 5</h3>
+            <p>Farlight</p>
+            <button onclick="registerGame('Farlight')">Register for Game 5</button>
+        </div>
+
+        <div class="game">
+            <img src="ind.jpg">
+            <h3>Game 6</h3>
+            <p>Indus Battle Royale</p>
+            <button onclick="registerGame('Indus Battle Royale')">Register for Game 6</button>
+        </div>
+        <div class="game">
+            <img src="https://cdn.akamai.steamstatic.com/steam/apps/921060/capsule_616x353.jpg?t=1632939112">
+            <h3>Game 7</h3>
+            <p>Modern combat 5 </p>
+            <button onclick="registerGame('Modern combat 5')">Register for Game 7</button>
+        </div>
+        <div class="game">
+            <img src="https://www.callofduty.com/content/dam/atvi/callofduty/cod-touchui/blog/body/bocw/BOCW-S6-Battle-Pass-001.jpg">
+            <h3>Game 8</h3>
+            <p>Black ops 6</p>
+            <button onclick="registerGame('Black ops 6')">Register for Game 8</button>
+        </div>
+        <div class="game">
+            <img src="https://www.gamepur.com/wp-content/uploads/2023/10/MHUR_announcement_thumbnail.jpg?w=1200">
+            <h3>Game 9</h3>
+            <p>My Hero Ultra Rumble</p>
+            <button onclick="registerGame('My Hero Ultra Rumble')">Register for Game 9</button>
+        </div>
+        <div class="game">
+            <img src="https://cdn.wccftech.com/wp-content/uploads/2019/02/apex-legends-keyart.jpg">
+            <h3>Game 10</h3>
+            <p>Apex Legends</p>
+            <button onclick="registerGame('Apex Legends')">Register for Game 10</button>
+        </div>
+        <div class="game">
+            <img src="https://cdn1.epicgames.com/offer/eca9a86adffa4605b8250d383fc01098/EGS_DeceiveInc_SweetBanditsStudios_S1_2560x1440-3a1e885fd642564a44875bf005d8ffb3">
+            <h3>Game 11</h3>
+            <p>Deceive Inc</p>
+            <button onclick="registerGame('Deceive Inc')">Register for Game 11</button>
+        </div>
+        <div class="game">
+            <img src="https://www.nme.com/wp-content/uploads/2023/03/fortnite-chapter-4-season-2-main-header-characters.jpg">
+            <h3>Game 12</h3>
+            <p>Fortnite</p>
+            <button onclick="registerGame('Fortnite')">Register for Game 12</button>
+        </div>
+        <div class="game">
+            <img src="https://i.ytimg.com/vi/bHgpKcR_ibM/maxresdefault.jpg">
+            <h3>Game 13</h3>
+            <p>Totally Accurate Battlegrounds</p>
+            <button onclick="registerGame('Totally Accurate Battlegroundst')">Register for Game 13</button>
+        </div>
+        <div class="game">
+            <img src="https://i.ytimg.com/vi/pJqrxp3P11c/maxresdefault.jpg">
+            <h3>Game 14</h3>
+            <p>Minecraft Survival Games</p>
+            <button onclick="registerGame('Minecraft Survival Games')">Register for Game 14</button>
+        </div>
+        <div class="game">
+            <img src="https://i.ytimg.com/vi/JPI9elEuU-Q/maxresdefault.jpg">
+            <h3>Game 15</h3>
+            <p>Unturned: Arena mode</p>
+            <button onclick="registerGame('Unturned: Arena mode')">Register for Game 15</button>
+        </div>
+        <div class="game">
+            <img src="https://tech4gamers.com/wp-content/uploads/2022/04/vampire-bloodhunt-final-cover.jpg">
+            <h3>Game 16</h3>
+            <p>Vampire: The Masquerade – Bloodhunt</p>
+            <button onclick="registerGame('Vampire: The Masquerade – Bloodhunt')">Register for Game 16</button>
+        </div>
+        <div class="game">
+            <img src="https://cdn.akamai.steamstatic.com/steam/apps/2246340/capsule_616x353.jpg?t=1703039818">
+            <h3>Game 17</h3>
+            <p>Monster Hunter Wilds</p>
+            <button onclick="registerGame('Monster Hunter Wilds')">Register for Game 17</button>
+        </div>
+        <div class="game">
+            <img src="https://cdn1.epicgames.com/spt-assets/a7641d724f1242db95f8f72fc0fd8d81/kingdom-come-deliverance-2-87lch.jpg">
+            <h3>Game 18</h3>
+            <p>Kingdom Come Deliverance 2</p>
+            <button onclick="registerGame('Kingdom Come Deliverance 2')">Register for Game 18</button>
+        </div>
+        <div class="game">
+            <img src="https://static0.gamerantimages.com/wordpress/wp-content/uploads/wm/2024/11/indiana-jones-and-the-great-circle-key-art-with-logo.jpg">
+            <h3>Game 19</h3>
+            <p>Indiana Jones and the Great Circle</p>
+            <button onclick="registerGame('Indiana Jones and the Great Circle')">Register for Game 19</button>
+        </div>
+        <div class="game">
+            <img src="https://static0.gamerantimages.com/wordpress/wp-content/uploads/2024/04/marvel-rivals-logo-ironman-hulk.jpeg">
+            <h3>Game 20</h3>
+            <p>Marvel Rivals</p>
+            <button onclick="registerGame('Marvel Rivals')">Register for Game 20</button>
+        </div>
+        <div class="game">
+            <img src="https://jpgames.de/wp-content/uploads/2023/12/metaphor-refantazio-key-artwork-scaled.jpg">
+            <h3>Game 21</h3>
+            <p>Metaphor ReFantazio</p>
+            <button onclick="registerGame('Metaphor ReFantazio')">Register for Game 21</button>
+        </div>
+        <div class="game">
+            <img src="https://static1.srcdn.com/wordpress/wp-content/uploads/2024/10/diablo-4-vessel-of-hatred-logo-and-opening-screenshot.jpg">
+            <h3>Game 22</h3>
+            <p>Diablo 4 Vessel of Hatred</p>
+            <button onclick="registerGame('Diablo 4 Vessel of Hatred')">Register for Game 22</button>
+        </div>
+        <div class="game">
+            <img src="https://cdn.wccftech.com/wp-content/uploads/2023/06/Kunitsu-Gami-Path-of-the-Goddess.jpg">
+            <h3>Game 23</h3>
+            <p>Kunitsu-Gami: Path of the Goddess</p>
+            <button onclick="registerGame('Kunitsu-Gami: Path of the Goddess')">Register for Game 23</button>
+        </div>
+        <div class="game">
+            <img src="https://cdn.mos.cms.futurecdn.net/syoGXQkhssoUN8MAn4AAHn.jpg">
+            <h3>Game 24</h3>
+            <p>Hades 2</p>
+            <button onclick="registerGame('Hades 2')">Register for Game 24</button>
+        </div>
+        <div class="game">
+            <img src="https://i.gadgets360cdn.com/products/large/tekken8-1663261659390-1000x1000-1672296470.jpg">
+            <h3>Game 25</h3>
+            <p>Tekken 8</p>
+            <button onclick="registerGame('Tekken 8')">Register for Game 25</button>
+        </div>
+        <div class="game">
+            <img src="https://psverso.com.br/wp-content/uploads/2023/06/Pacific-Drive.jpg">
+            <h3>Game 26</h3>
+            <p>Pacific Drive</p>
+            <button onclick="registerGame('Pacific Drive')">Register for Game 26</button>
+        </div>
+
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<head>
+    <title>E-Sports Website</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* Slide-in animation */
+        @keyframes slideIn {
+            from { transform: translateY(50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        /* Default Background */
+        body {
+            color: gold;
+            text-align: center;
+            padding: 20px;
+            background-image: url('https://images.squarespace-cdn.com/content/v1/5eb5725386508b68f27bcdee/a95613a5-8551-462d-86f8-331fe97bea86/Immersive+Arts+%E2%80%93+Battle+Royale+E-Sports+Experience+%E2%80%93+LED+Off+%E2%80%93+3.jpg');
+            background-size: 100% 100%;
+            background-position: center;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            animation: fadeIn 1.5s ease-in;
+        }
+        
+        /* Navbar Styling */
+        .navbar {
+            display: flex;
+            justify-content: flex-end;
+            gap: 20px;
+            background: black;
+            padding: 15px;
+            border-bottom: 3px solid gold;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            animation: slideIn 1s ease-out;
+        }
+
+        .navbar a {
+            color: gold;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold;
+            padding: 10px 15px;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+
+        .navbar a:hover {
+            background: gold;
+            color: black;
+            transform: scale(1.1);
+        }
+
+        .content {
+            margin-top: 80px;
+        }
+
+        #homeSection {
+            display: block;
+            animation: fadeIn 2s;
+            padding: 50px;
+            background-image: url('home_bg.jpg'); /* Replace with actual home page image */
+            background-size: cover;
+            background-position: center;
+        }
+
+        /* Search Bar */
+        .search-bar {
+            margin-top: 20px;
+        }
+
+        .search-bar input {
+            width: 50%;
+            padding: 10px;
+            border: 2px solid gold;
+            border-radius: 5px;
+            background: black;
+            color: gold;
+            font-size: 16px;
+            text-align: center;
+        }
+
+        .search-bar input::placeholder {
+            color: gold;
+            opacity: 0.7;
+        }
+
+        /* Contact Section */
+       #contactInfo {
+            display: none;
+            max-width: 600px;
+            margin: auto;
+            padding: 20px;
+            border: 2px solid gold;
+            border-radius: 10px;
+            box-shadow: 0 0 10px gold;
+            margin-top: 80px;
+           background-color: white;
+            background-position: center;
+            background-size: 50% 70% ;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            color:black;
+            
+        }
+
+        button {
+            background: gold;
+            color: black;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background: black;
+            color: gold;
+            border: 2px solid gold;
+            transform: scale(1.1);
+        }
+
+        /* Game Rules Section */
+        .game-rules {
+            margin-top: 40px;
+            background-color: #222;
+            padding: 20px;
+            border: 2px solid gold;
+            border-radius: 10px;
+            box-shadow: 0 0 10px gold;
+            width: 60%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .game-rules h2 {
+            margin-bottom: 20px;
+        }
+
+        .game-rules ul {
+            text-align: left;
+            list-style-type: disc;
+            padding-left: 20px;
+            margin-bottom: 20px;
+        }
+
+        /* Prize Money Section */
+        .prize-money {
+            margin-top: 40px;
+            background-color: #333;
+            padding: 20px;
+            border: 2px solid gold;
+            border-radius: 10px;
+            box-shadow: 0 0 10px gold;
+            width: 60%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .prize-money p {
+            font-size: 28px;
+            font-weight: bold;
+            color: gold;
+        }
+        /* Game List */
+.game-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+.game-list li {
+            background: black;
+            color: white;
+            padding: 15px;
+            margin: 10px auto;
+            width: 60%;
+            border: 2px solid gold;
+            border-radius: 5px;
+            text-align: left;
+            animation: slideIn 1.5s ease-in;
+        }
+
+/* Register Button */
+.register-btn {
+    background: gold;
+    color: black;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+    margin-top: 5px;
+}
+
+.register-btn:hover {
+    transform: scale(1.1);
+    background: black;
+    color: gold;
+    border: 2px solid gold;
+}
+
+
+
+        
+    </style>
+
+    <script>
+
+        // Show Home Section on Page Load
+        document.addEventListener("DOMContentLoaded", function() {
+            showHome();
+        });
+
+        function showHome() {
+            document.getElementById('homeSection').style.display = 'block';
+            document.getElementById('contactInfo').style.display = 'none';
+        }
+        const games = [
+    { name: "Valorant", date: "March 10, 2025", time: "5:00 PM IST", available: true },
+    { name: "Counter-Strike 2", date: "March 12, 2025", time: "7:00 PM IST", available: false },
+    { name: "Dota 2", date: "March 15, 2025", time: "6:30 PM IST", available: true },
+    { name: "League of Legends", date: "March 18, 2025", time: "4:30 PM IST", available: true },
+    { name: "Apex Legends", date: "March 20, 2025", time: "6:00 PM IST", available: false },
+    { name: "Rainbow Six Siege", date: "March 22, 2025", time: "8:00 PM IST", available: true },
+    { name: "Call of Duty: Warzone", date: "March 25, 2025", time: "9:00 PM IST", available: true },
+    { name: "PUBG: Battlegrounds", date: "March 27, 2025", time: "3:30 PM IST", available: false },
+    { name: "Overwatch 2", date: "March 30, 2025", time: "5:45 PM IST", available: true },
+    { name: "Fortnite", date: "April 2, 2025", time: "7:15 PM IST", available: false },
+    { name: "Rocket League", date: "April 5, 2025", time: "6:30 PM IST", available: true },
+    { name: "Hearthstone", date: "April 7, 2025", time: "4:45 PM IST", available: true },
+    { name: "Street Fighter 6", date: "April 10, 2025", time: "8:00 PM IST", available: true },
+    { name: "Tekken 8", date: "April 12, 2025", time: "6:00 PM IST", available: false },
+    { name: "Super Smash Bros. Ultimate", date: "April 15, 2025", time: "9:30 PM IST", available: true },
+    { name: "Halo Infinite", date: "April 18, 2025", time: "5:00 PM IST", available: true },
+    { name: "Mortal Kombat 11", date: "April 20, 2025", time: "7:30 PM IST", available: false },
+    { name: "Clash Royale", date: "April 22, 2025", time: "6:45 PM IST", available: true },
+    { name: "FIFA 25", date: "April 25, 2025", time: "8:30 PM IST", available: true },
+    { name: "NBA 2K25", date: "April 28, 2025", time: "9:00 PM IST", available: false },
+    { name: "StarCraft II", date: "May 1, 2025", time: "4:15 PM IST", available: true },
+    { name: "Heroes of the Storm", date: "May 3, 2025", time: "7:45 PM IST", available: false },
+    { name: "Pokemon Unite", date: "May 5, 2025", time: "5:15 PM IST", available: true },
+    { name: "Guilty Gear Strive", date: "May 7, 2025", time: "6:30 PM IST", available: true },
+    { name: "Splatoon 3", date: "May 10, 2025", time: "9:00 PM IST", available: false },
+    { name: "Fall Guys", date: "May 12, 2025", time: "7:45 PM IST", available: true },
+    { name: "Tetris 99", date: "May 15, 2025", time: "8:15 PM IST", available: true },
+    { name: "World of Warcraft", date: "May 17, 2025", time: "5:30 PM IST", available: false },
+    { name: "Brawlhalla", date: "May 20, 2025", time: "6:00 PM IST", available: true },
+    { name: "Diablo IV", date: "May 22, 2025", time: "9:15 PM IST", available: true },
+    { name: "For Honor", date: "May 25, 2025", time: "4:45 PM IST", available: false },
+    { name: "Destiny 2", date: "May 27, 2025", time: "7:30 PM IST", available: true },
+    { name: "Elden Ring PvP", date: "May 30, 2025", time: "8:45 PM IST", available: true },
+    { name: "Age of Empires IV", date: "June 2, 2025", time: "5:15 PM IST", available: false },
+    { name: "Lost Ark", date: "June 5, 2025", time: "6:30 PM IST", available: true },
+    { name: "Team Fortress 2", date: "June 7, 2025", time: "8:00 PM IST", available: true },
+    { name: "Hunt: Showdown", date: "June 10, 2025", time: "9:30 PM IST", available: false },
+    { name: "Gears of War 5", date: "June 12, 2025", time: "5:45 PM IST", available: true },
+    { name: "Sea of Thieves", date: "June 15, 2025", time: "7:00 PM IST", available: true },
+    { name: "Warframe", date: "June 18, 2025", time: "8:30 PM IST", available: false },
+    { name: "Battlefield 2042", date: "June 20, 2025", time: "6:15 PM IST", available: true },
+    { name: "Rust", date: "June 23, 2025", time: "9:00 PM IST", available: true },
+    { name: "Escape from Tarkov", date: "June 25, 2025", time: "5:30 PM IST", available: false },
+    { name: "Cyberpunk 2077 Phantom Liberty", date: "June 28, 2025", time: "6:45 PM IST", available: true },
+    { name: "Among Us", date: "July 1, 2025", time: "8:00 PM IST", available: true },
+    { name: "Dark Souls 3 PvP", date: "July 3, 2025", time: "9:15 PM IST", available: false },
+    { name: "Gotham Knights", date: "July 5, 2025", time: "5:45 PM IST", available: true }
+];
+
+
+        function searchGames() {
+            let input = document.getElementById("gameSearch").value.toLowerCase().trim();
+            let list = document.getElementById("gameList");
+            list.innerHTML = "";
+
+            if (input === "") return;
+
+            let filteredGames = games.filter(game => game.name.toLowerCase().includes(input));
+
+            filteredGames.forEach(game => {
+                let li = document.createElement("li");
+                li.innerHTML = `<b>${game.name}</b><br>
+                                📅 Date: ${game.date} <br>
+                                ⏰ Time: ${game.time} <br>
+                                🎮 Status: ${game.available ? "<span style='color: white;'>Available</span>" : "<span style='color: red;'>Not Available</span>"}`;
+                
+                let button = document.createElement("button");
+                button.textContent = "Register";
+                button.className = "register-btn";
+                button.disabled = !game.available;
+                button.onclick = function() { 
+                    if (game.available) openRegistrationForm(game.name);
+                };
+                
+                li.appendChild(document.createElement("br"));
+                li.appendChild(button);
+                list.appendChild(li);
+            });
+        }
+
+        function openRegistrationForm(gameName) {
+    let formUrl = "registration.html";
+    window.open(formUrl, "_blank");
+}
+
+
+        function showContactInfo() {
+            document.getElementById('homeSection').style.display = 'none';
+            document.getElementById('contactInfo').style.display = 'block';
+        }
+    </script>
+</head>
+<body>
+
+    <div class="navbar">
+        <a href="#" onclick="showHome()">🏠 Home</a>
+        <a href="sports.html" target="_blank">Ongoing Games</a>
+        <a href="#" onclick="showContactInfo()">🗣️ Customer Service</a>
+        <a href="rules.html" target="_blank">Games rules</a>
+    </div>
+
+    <div class="content">
+        <!-- Home Section -->
+        <div id="homeSection">
+            <h1>Welcome to the Ultimate E-Sports Experience!</h1>
+            <p>Compete, Win, and Become a Champion!</p>
+            <div class="search-bar">
+                <input type="text" id="gameSearch" placeholder="Search games..." onkeyup="searchGames()">
+            </div>
+            <ul id="gameList" class="game-list"></ul> <!-- List to display search results -->
+        </ul>
+
+            <!-- Game Rules Section -->
+            <div class="game-rules">
+                <h2>Game Rules & Guidelines</h2>
+                <ul>
+                    <li>Players must register before participating in any tournament.</li>
+                    <li>Fair play is expected at all times; cheating will result in disqualification.</li>
+                    <li>Each game may have specific rules that must be followed—be sure to read them before playing.</li>
+                    <li>All players are required to have a stable internet connection during tournaments.</li>
+                    <li>Respect all players, officials, and organizers—any form of harassment will not be tolerated.</li>
+                    <li>Follow all game-specific rules for tournaments, including match timing and score reporting.</li>
+                </ul>
+            </div>
+            
+           
+
+            <!-- Prize Money Section -->
+            <div class="prize-money">
+                <p>Prize Money for battle royale games: ₹2 lakh</p>
+            </div>
+        </div>
+
+        <!-- Contact Section -->
+        <div id="contactInfo">
+            <h2><b>Customer Service</b></h2><br>
+            <p><b>Email: support@esports.com</b></p><br>
+            <p><b>Phone: +123 456 7890</b></p><br>
+            <p><b>Follow us on social media for updates.</b></p><br>
+            <p><b>Instagram: <a href="https://www.instagram.com/esports" target="_blank" style="color: blue;">@esports</b></a></p>
+            <p><b>Facebook: <a href="https://www.facebook.com/esports" target="_blank" style="color: blue;">@esports-india</b></a></p>
+            <p><b>Twitter: <a href="https://www.twitter.com/esports" target="_blank" style="color: blue;">#esports_india</b></a></p><br>
+            <button onclick="alert('Starting chat...')">Chat with Us</button>
+            <button onclick="alert('Calling support...')">Call Us</button>
+        </div>
+    </div>
+</body>
+</html>
+

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Rules</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+       body {
+        background-image: url('https://preview.redd.it/pnfe3hsy5d4c1.png?width=3440&format=png&auto=webp&s=2edf5c94882412fc6debd5b1da9e9a067fa29003');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            font-family: Arial, sans-serif;
+            background-color: #0f0f0f;
+            color: #0ff;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #111133;
+            color: #00ffff;
+            padding: 15px 0;
+            font-size: 24px;
+            text-shadow: 0 0 10px #00ffff;
+        }
+        nav {
+            background: #222;
+            padding: 10px;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+        nav ul li a {
+            color: #ff00ff;
+            text-decoration: none;
+            font-size: 18px;
+        }
+        main {
+            margin: 20px;
+            padding: 20px;
+            background: #111;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0, 255, 255, 0.5);
+            display: inline-block;
+        }
+        #game-rules {
+            max-width: 600px;
+            margin: auto;
+            text-align: left;
+            color: #0ff;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Game Rules</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#" onclick="showRules('chess')">Chess</a></li>
+            <li><a href="#" onclick="showRules('football')">Football</a></li>
+            <li><a href="#" onclick="showRules('basketball')">Basketball</a></li>
+            
+        </ul>
+    </nav>
+    <main>
+        <section id="game-rules">
+            <p id="rules-text"></p>
+        </section>
+    </main>
+    <script>
+        function showRules(game) {
+            let rules = {
+                'chess': "1. Each player starts with 16 pieces.\n2. The objective is to checkmate the opponent's king.\n3. Pawns move forward but capture diagonally.\n4. The king moves one square in any direction.",
+                'football': "1. The game is played between two teams of 11 players each.\n2. The objective is to score by getting the ball into the opponent's goal.\n3. The match consists of two halves of 45 minutes each.\n4. Players cannot use their hands except the goalkeeper.",
+                'basketball': "1. The game is played between two teams of 5 players each.\n2. The objective is to score points by shooting the ball into the opponent’s hoop.\n3. A game consists of four quarters of 12 minutes each.\n4. Dribbling is required to move with the ball."
+            };
+            document.getElementById('rules-text').innerText = rules[game] || "Rules not found.";
+        }
+    </script>
+</body>
+</html>

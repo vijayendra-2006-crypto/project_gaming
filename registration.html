@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Registration</title>
+    <style>
+        /* ... (Your existing styles remain the same) ... */
+        body {
+            background-image: url('https://preview.redd.it/pnfe3hsy5d4c1.png?width=3440&format=png&auto=webp&s=2edf5c94882412fc6debd5b1da9e9a067fa29003');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            color: #e0f7fa;
+            font-family: 'Montserrat', sans-serif;
+            text-align: center;
+            padding: 40px;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            animation: fadeIn 1s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        h2 {
+            font-size: 2.4em;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+            letter-spacing: 1px;
+            color: #b2ebf2;
+            animation: slideDown 0.8s ease-out;
+        }
+
+        @keyframes slideDown {
+            from { transform: translateY(-50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        .registration-form {
+            background: rgba(38, 50, 56, 0.8);
+            border: 2px solid #80deea;
+            padding: 25px;
+            border-radius: 10px;
+            width: 50%;
+            max-width: 600px;
+            margin: 20px auto;
+            text-align: left;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+            animation: slideUp 0.8s ease-out;
+        }
+
+        @keyframes slideUp {
+            from { transform: translateY(50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        label {
+            display: block;
+            margin-top: 15px;
+            font-weight: 600;
+            color: #80deea;
+        }
+
+        input, select {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin: 8px 0;
+            border: 1px solid #4dd0e1;
+            background: rgba(55, 71, 79, 0.7);
+            color: #e0f7fa;
+            border-radius: 5px;
+            font-size: 15px;
+            transition: border-color 0.3s ease;
+        }
+
+        input:focus, select:focus {
+            outline: none;
+            border-color: #00bcd4;
+        }
+
+        h1 {
+            margin-top: 25px;
+            color: #4de1b5;
+            border-bottom: 3px solid #26a7da;
+            padding-bottom: 10px;
+            font-size: 1.2em;
+        }
+
+        h2 {
+            margin-top: 25px;
+            color: #4de15c;
+            border-bottom: 2px solid #a78444;
+            padding-bottom: 10px;
+            font-size: 1.2em;
+              }
+        h3 {
+            margin-top: 25px;
+            color: #4de15c;
+            border-bottom: 2px solid #a78444;
+            padding-bottom: 10px;
+            font-size: 1.2em;
+              }
+        h4 {
+            margin-top: 25px;
+            color: #4de15c;
+            border-bottom: 2px solid #a78444;
+            padding-bottom: 10px;
+            font-size: 1.2em;
+              }
+        h5 {
+            margin-top: 25px;
+            color: #4de15c;
+            border-bottom: 2px solid #a78444;
+            padding-bottom: 10px;
+            font-size: 1.2em;
+              }
+        button {
+            background: linear-gradient(to right, #00bcd4, #26c6da);
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 20px;
+            width: 100%;
+            border-radius: 6px;
+            font-size: 16px;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.6);
+            background: linear-gradient(to right, #26c6da, #00bcd4);
+        }
+
+        @media (max-width: 768px) {
+            .registration-form {
+                width: 90%;
+                padding: 20px;
+            }
+        }
+
+    </style>
+    <script>
+        function getGameName() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const gameName = urlParams.get('game');
+            document.getElementById("gameTitle").innerText = gameName;
+            document.getElementById("hiddenGameName").value = gameName; //set hidden input value
+        }
+
+        function submitForm() {
+            alert("Registration successful!");
+            window.close();
+        }
+    </script>
+</head>
+<body onload="getGameName()">
+    <h2>Register for <span id="gameTitle"></span></h2>
+    <div class="registration-form">
+        
+        <label for="email">Game Name:</label>
+        <input type="text" id="game name" required>
+        
+        <label for="teamName">Team Name:</label>
+        <input type="text" id="teamName" required>
+
+        <label for="playerName">Your Name:</label>
+        <input type="text" id="playerName" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" required>
+
+
+    <h1>Squad Members:</h1>
+    
+    <h2>player 1</h2>
+        <label for="member1">Member 1 Name:</label>
+        <input type="text" id="member1" required>
+        <label for="role1">Role:</label>
+        <input type="text" id="role1" required>
+        <label for="id1">In-Game ID:</label>
+        <input type="text" id="id1" required>
+        
+    <h3>player 2</h3>
+        <label for="member2">Member 2 Name:</label>
+        <input type="text" id="member2">
+        <label for="role2">Role:</label>
+        <input type="text" id="role2">
+        <label for="id2">In-Game ID:</label>
+        <input type="text" id="id2">
+
+    <h4>player 3</h4>
+        <label for="member3">Member 3 Name:</label>
+        <input type="text" id="member3">
+        <label for="role3">Role:</label>
+        <input type="text" id="role3">
+        <label for="id3">In-Game ID:</label>
+        <input type="text" id="id3">
+
+    <h5>player 4</h5>
+        <label for="member4">Member 4 Name:</label>
+        <input type="text" id="member4">
+        <label for="role4">Role:</label>
+        <input type="text" id="role4">
+        <label for="id4">In-Game ID:</label>
+        <input type="text" id="id4">
+
+        <button onclick="submitForm()">Submit Registration</button>
+    </div>
+</body>
+</html>
